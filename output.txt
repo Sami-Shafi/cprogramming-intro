@@ -1,0 +1,2 @@
+Please enter your age: 
+Your age is: 550
