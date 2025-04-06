@@ -1,2 +1,2 @@
-Please enter your age: 
-Your age is: 550
+Your number is: 10000000000 
+Your number2 is: 2321.424368

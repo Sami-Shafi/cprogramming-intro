@@ -1,11 +1,13 @@
 #include <stdio.h>
 int main ()
 {
-    int age;
-    printf("Please enter your age: \n");
-    scanf("%d", &age);
+    long long int random = 10000000000;
 
-    printf("Your age is: %d", age);
+    printf("Your number is: %lld \n", random);
+
+    double random2 = 2321.424368;
+
+    printf("Your number2 is: %lf", random2);
 
     return 0;
 }
