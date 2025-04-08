@@ -1,12 +1,12 @@
 #include <stdio.h>
 int main ()
 {
-    int first = 17;
+    float first = 17;
     int second = 2;
 
-    int div = first / second;
+    float div = first / second;
 
-    printf("The Result: %d", div);
+    printf("The Result: %f", div);
 
     return 0;
 }
