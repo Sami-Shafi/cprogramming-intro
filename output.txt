@@ -1,4 +1,1 @@
-Total is: 12 
-Subtraction Result: 8 
-Multiplication Result: 20 
-Division Result: 5
+The Result: 8
