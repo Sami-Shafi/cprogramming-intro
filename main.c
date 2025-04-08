@@ -1,13 +1,22 @@
 #include <stdio.h>
 int main ()
 {
-    long long int random = 10000000000;
+    int first = 10;
+    int second = 2;
+    
+    int sum = first + second;
+    printf("Total is: %d \n", sum);
 
-    printf("Your number is: %lld \n", random);
+    int sub = first - second;
+    printf("Subtraction Result: %d \n", sub);
 
-    double random2 = 2321.424368;
+    int multiply = first * second;
+    printf("Multiplication Result: %d \n", multiply);
 
-    printf("Your number2 is: %lf", random2);
+    int div = first / second;
+    printf("Division Result: %d", div);
+
+    
 
     return 0;
 }

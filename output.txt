@@ -1,2 +1,4 @@
-Your number is: 10000000000 
-Your number2 is: 2321.424368
+Total is: 12 
+Subtraction Result: 8 
+Multiplication Result: 20 
+Division Result: 5
