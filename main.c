@@ -1,12 +1,17 @@
 #include <stdio.h>
 int main ()
 {
-    int first = 17;
-    int second = 2;
+    int cash;
 
-    int rem = first % second;
-
-    printf("The Result: %d", rem);
+    if (cash >= 100) {
+        printf("Platter Khabo");
+    }else if (cash >= 50)
+    {
+        printf("Fuchka Khawa Jay");
+    }else {
+        printf("Fokir Amra! Kosto!");
+    }
+    
 
     return 0;
 }
