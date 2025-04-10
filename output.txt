@@ -1,1 +1,13 @@
-Fokir Amra! Kosto!
+Please Enter Maximum Number: 
+Value Updated: 1 
+Value Updated: 3 
+Value Updated: 6 
+Value Updated: 10 
+Value Updated: 15 
+Value Updated: 21 
+Value Updated: 28 
+Value Updated: 36 
+Value Updated: 45 
+Value Updated: 55 
+--------- 
+Total Summation: 55!
