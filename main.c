@@ -1,26 +1,21 @@
 #include <stdio.h>
 
 int main() {
-    // Given a number X. Print "EVEN" if the first digit of X is even number. Otherwise print "ODD".
+    // Given a letter X. If the letter is lowercase print the letter after converting it from lowercase letter to uppercase letter. Otherwise print the letter after converting it from uppercase letter to lowercase letter
 
-    // For example: In 4569 the first digit is 4, the second digit is 5, the third digit is 6 and the fourth digit is 9.
+    // Note : difference between 'a' and 'A' in ASCII is 32 .
 
-    //range: 999 < x <= 9999
+    char letter;
+    scanf("%c", &letter);
+    int letterCode = letter;
 
-    int num, first;
-    scanf("%d", &num);
-    first = num;
-
-    if(num>999 && num<=9999){
-        while (first >= 10) {
-            first /= 10;
-        }
-
-        if (first % 2 == 0) {
-            printf("EVEN");
-        } else {
-            printf("ODD");
-        }
+    char newLetter;
+    if(letterCode <= 122 && letterCode >= 97){
+        newLetter = letterCode-32;
+        printf("%c", newLetter);
+    } else if(letterCode <= 90 && letterCode >= 65) {
+        newLetter = letterCode+32;
+        printf("%c", newLetter);
     }
     
     return 0;
