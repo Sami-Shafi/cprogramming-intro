@@ -1,27 +1,34 @@
 #include <stdio.h>
 
 int main() {
+    //Given a number N. Print all even numbers between 1 and N inclusive in separate lines.
 
-    int a, b, c;
-    scanf("%d %d %d", &a, &b, &c);
-    int lowerLimit = -100000;
-    int upperLimit = 100000;
+    // Input
+    // Only one line containing a number N (1 ≤ N ≤ 103).
 
-    if (a >= lowerLimit && a <= upperLimit && b >= lowerLimit && b <= upperLimit && c >= lowerLimit && c <= upperLimit) {
-        int highest = a;
-        int lowest = b;
-        if (b > a) {
-            highest = b;
-            lowest = a;
+    // Output
+    // Print the answer according to the required above. If there are no even numbers print -1.
+
+    int n;
+    scanf("%d", &n);
+
+    int evenExists = 0;
+    for (int i = 1; i <= n; i++)
+    {
+        if(i % 2 == 0) {
+            if(evenExists == 0) {
+                evenExists = 1;
+            }
+            printf("%d", i);
+            if (n-i > 1) {
+                printf("\n");
+            }
         }
-        if (c > highest) {
-            highest = c;
-        }
-        if (c < lowest) {
-            lowest = c;
-        }
-        printf("%d %d", lowest, highest);
     }
+    if (evenExists == 0) {
+        printf("-1");
+    }
+    
     
     return 0;
 }
