@@ -1,34 +1,21 @@
 #include <stdio.h>
 
 int main() {
-    //Given a number N. Print all even numbers between 1 and N inclusive in separate lines.
 
-    // Input
-    // Only one line containing a number N (1 ≤ N ≤ 103).
+    int x = 10;
+    int y = ++x;
+    int z = y++;
+    printf("%d \n", x);
+    printf("%d \n", y);
+    printf("%d \n", z);
+    printf("%d \n", z++);
+    printf("%d ", z);
 
-    // Output
-    // Print the answer according to the required above. If there are no even numbers print -1.
+    printf("\n \n");
 
-    int n;
-    scanf("%d", &n);
-
-    int evenExists = 0;
-    for (int i = 1; i <= n; i++)
-    {
-        if(i % 2 == 0) {
-            if(evenExists == 0) {
-                evenExists = 1;
-            }
-            printf("%d", i);
-            if (n-i > 1) {
-                printf("\n");
-            }
-        }
-    }
-    if (evenExists == 0) {
-        printf("-1");
-    }
-    
+    int x2 = 10;
+    ++x2;
+    printf("%d", ++x2);
     
     return 0;
 }
