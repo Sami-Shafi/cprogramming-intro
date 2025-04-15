@@ -1,25 +1,24 @@
 #include <stdio.h>
 
 int main() {
-    
-    // Given multiple lines each line contains a number X which is a password. Print "Wrong" if the password is incorrect otherwise, print "Correct" and terminate the program.
-    // Note: The "Correct" password is the number 1999.
+    // Given a number N, and N numbers, find maximum number in these N numbers.
 
     // Input
-    // The input contains several passwords.
-    // Each line contains a number X (103 ≤ X ≤ 104 - 1).
+    // First line contains a number N (1 ≤ N ≤ 103).
+
+    // Second line contains N numbers Xi (0 ≤ Xi ≤ 109).
     
-    int pass = 1999, input;
-    while (scanf("%d", &input) != EOF)
-    {
-        if (input == pass) {
-            printf("Correct");
-            break;
-        }else {
-            printf("Wrong\n");
+    int count, highest; 
+    scanf("%d", &count);
+
+    int currentNum;
+    for (int i=1; i<=count; i++) {
+        scanf("%d", &currentNum);
+        if (i == 1 || currentNum > highest) {
+            highest = currentNum;
         }
     }
-    
+    printf("%d", highest);
 
     return 0;
 }
