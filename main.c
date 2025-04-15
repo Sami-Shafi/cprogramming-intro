@@ -1,18 +1,25 @@
 #include <stdio.h>
 
 int main() {
-    // Given two numbers A and B. Print "Multiples" if A is multiple of B or vice versa. Otherwise print "No Multiples".
-    // Only one line containing two numbers A, B (1  ≤  A, B  ≤  10^6)
-    
-    int a;
-    int b;
-    scanf("%d %d", &a, &b);
+    // Given a number X. Print "EVEN" if the first digit of X is even number. Otherwise print "ODD".
 
-    if(a>=1 && b>=1 && a<=1000000 && b<=1000000){
-        if ( a % b == 0 || b % a == 0) {
-            printf("Multiples");
-        }else {
-            printf("No Multiples");
+    // For example: In 4569 the first digit is 4, the second digit is 5, the third digit is 6 and the fourth digit is 9.
+
+    //range: 999 < x <= 9999
+
+    int num, first;
+    scanf("%d", &num);
+    first = num;
+
+    if(num>999 && num<=9999){
+        while (first >= 10) {
+            first /= 10;
+        }
+
+        if (first % 2 == 0) {
+            printf("EVEN");
+        } else {
+            printf("ODD");
         }
     }
     
