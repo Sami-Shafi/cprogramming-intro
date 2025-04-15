@@ -1,24 +1,14 @@
 #include <stdio.h>
 
-int main() {
-    // Given a number N, and N numbers, find maximum number in these N numbers.
+int main() {    
 
-    // Input
-    // First line contains a number N (1 ≤ N ≤ 103).
+    int num, calc;
+    scanf("%d", &num);
 
-    // Second line contains N numbers Xi (0 ≤ Xi ≤ 109).
-    
-    int count, highest; 
-    scanf("%d", &count);
-
-    int currentNum;
-    for (int i=1; i<=count; i++) {
-        scanf("%d", &currentNum);
-        if (i == 1 || currentNum > highest) {
-            highest = currentNum;
-        }
+    for (int i = 1; i <= 12; i++) {
+        calc = num * i;
+        printf("%d * %d = %d\n", num, i, calc);
     }
-    printf("%d", highest);
 
     return 0;
 }
