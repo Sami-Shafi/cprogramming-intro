@@ -1,40 +1,54 @@
 #include <stdio.h>
 
 int main() {
-    // You will be given an integer N. If N is a positive number then print from 1 to N, otherwise print from N to 0.
+    
+    // You will be given a positive integer N and an array A of size N. Suppose, the index starts from 0, then you need to print all the values at odd indexes in reverse way.
 
-    // Note: A positive number is a number that is strictly greater than 0.
+    // For example:
+
+    // If the input is
+
+    // 6
+    // 10 20 30 40 50 60
+    // You need to print 60 40 20 as their indexes are 5 3 1 respectively.
 
     // Input Format
 
-    // Input will contain only N.
+    // First line will contain N.
+    // Second line will contain the array A.
     // Constraints
 
-    // -10^5 <= N <= 10^5
+    // 1 <= N <= 10^5
+    // 1 <= A[i] <= 1000 ; where A[i] are the values of array A.
     // Output Format
 
-    // Output as asked in the question and don't forget to put a space between the values.
-    
-    int N, start, end;
-    scanf("%d", &N);
+    // Output the values of odd indexes in reverse way. Don't forget to put a space between two values.
 
-    if(N > 0) {
-        start = 1;
-        end = N;
-    }else {
-        start = N;
-        end = 0;
-    }
+    int arraySize, arrayValueAtIndex;
+    scanf("%d", &arraySize);
 
-    for (int i = start; i <= end; i++)
+    if (arraySize >= 1 && arraySize <= 100000)
     {
-        printf("%d", i);
-        if (i < end)
+        int ourArray[arraySize];
+
+        for (int i = 0; i < arraySize; i++)
         {
-            printf(" ");
+            scanf("%d", &arrayValueAtIndex);
+            if (arrayValueAtIndex >= 1 && arrayValueAtIndex <= 1000) {
+                ourArray[i] = arrayValueAtIndex;
+            }
         }
-                
+
+        for (int i = arraySize-1; i >= 1; i-=2)
+        {
+            printf("%d", ourArray[i]);
+
+            if(i > 1) {
+                printf(" ");
+            }
+        }
     }
+    
 
     return 0;
 }
