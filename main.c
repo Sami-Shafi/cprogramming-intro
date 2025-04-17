@@ -2,56 +2,40 @@
 
 int main() {
     
-    // You will be given a positive integer N and an array A of size N. Suppose, the index starts from 0, then you need to print all the values at odd indexes in reverse way.
-
-    // For example:
-
-    // If the input is
-
-    // 6
-    // 10 20 30 40 50 60
-    // You need to print 60 40 20 as their indexes are 5 3 1 respectively.
+    // You will be given a positive integer N and N numbers after that. You need to tell the sum of positive numbers and the sum of negative numbers separated by a space.
 
     // Input Format
-
+    
     // First line will contain N.
-    // Second line will contain the array A.
+    // Second line will contain N values named V.
     // Constraints
-
+    
     // 1 <= N <= 10^5
-    // 1 <= A[i] <= 1000 ; where A[i] are the values of array A.
+    // -1000 <= V <= 1000
     // Output Format
+    
+    // Output the sum of positive numbers first, then sum of negative numbers.
+    
+    int N, sumP = 0, sumN = 0, temp;
+    scanf("%d", &N);
 
-    // Output the values of odd indexes in reverse way. Don't forget to put a space between two values.
-
-    int arraySize, arrayValueAtIndex;
-    scanf("%d", &arraySize);
-
-    if (arraySize >= 1 && arraySize <= 100000)
-    {
-        int ourArray[arraySize];
-
-        for (int i = 0; i < arraySize; i++)
+    if(N >= 1 && N <= 100000) {
+        for (int i = 1; i <= N; i++)
         {
-            scanf("%d", &arrayValueAtIndex);
-            if (arrayValueAtIndex >= 1 && arrayValueAtIndex <= 1000) {
-                ourArray[i] = arrayValueAtIndex;
-            }
-        }
-
-        for (int i = arraySize-1; i >= 1; i--)
-        {
-            if (i % 2 != 0)
-            {
-                printf("%d", ourArray[i]);
-                
-                if(i > 1) {
-                    printf(" ");
+            scanf("%d", &temp);
+            if(temp >= -1000 && temp <= 1000) {
+                if (temp >= 0)
+                {
+                    sumP += temp;
+                }else {
+                    sumN += temp;
                 }
             }
-            
         }
+
+        printf("%d %d", sumP, sumN);
     }
+    
     
     return 0;
 }
