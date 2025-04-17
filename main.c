@@ -1,30 +1,30 @@
 #include <stdio.h>
 
 int main() {
-    // Given a number N. Print the digits of that number from right to left separated by space.
+    // You will be given a positive integer N. You need to print "I Want More Assignments" N times without the quotation mark. Also print from 1 to N with it. See the sample input output for more clarifications.
 
-    // Input
-    // First line contains a number T (1 ≤ T ≤ 10) number of test cases.
+    // Input Format
 
-    // Next T lines will contain a number N (0 ≤ N ≤ 109)
+    // Input will contain only N.
+    // Constraints
 
-    // Output
-    // For each test case print a single line contains the digits of the number separated by space.
+    // 1 <= N <= 10^5
+    // Output Format
 
-    int lines, line;
-    scanf("%d", &lines);
+    // Output "I Want More Assignments" N times along with 1 to N and don't forget to print new line after it.
+    
+    int N;
+    scanf("%d", &N);
 
-    for (int i = 1; i <= lines; i++)
+    if (N >= 1 && N <= 100000)
     {
-        scanf("%d", &line);
-        while (line / 10 != 0){
-            printf("%d", line % 10);
-            printf(" ");
-            line /= 10;
+        for (int i = 1; i <= N; i++)
+        {
+            printf("%d. I Want More Assignments\n", i);
         }
-        printf("%d", line % 10);
-        printf("\n");
+        
     }
+    
 
     return 0;
 }
