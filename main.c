@@ -39,16 +39,19 @@ int main() {
             }
         }
 
-        for (int i = arraySize-1; i >= 1; i-=2)
+        for (int i = arraySize-1; i >= 1; i--)
         {
-            printf("%d", ourArray[i]);
-
-            if(i > 1) {
-                printf(" ");
+            if (i % 2 != 0)
+            {
+                printf("%d", ourArray[i]);
+                
+                if(i > 1) {
+                    printf(" ");
+                }
             }
+            
         }
     }
     
-
     return 0;
 }
