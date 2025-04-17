@@ -1,30 +1,40 @@
 #include <stdio.h>
 
 int main() {
-    // You will be given a positive integer N. You need to print "I Want More Assignments" N times without the quotation mark. Also print from 1 to N with it. See the sample input output for more clarifications.
+    // You will be given an integer N. If N is a positive number then print from 1 to N, otherwise print from N to 0.
+
+    // Note: A positive number is a number that is strictly greater than 0.
 
     // Input Format
 
     // Input will contain only N.
     // Constraints
 
-    // 1 <= N <= 10^5
+    // -10^5 <= N <= 10^5
     // Output Format
 
-    // Output "I Want More Assignments" N times along with 1 to N and don't forget to print new line after it.
+    // Output as asked in the question and don't forget to put a space between the values.
     
-    int N;
+    int N, start, end;
     scanf("%d", &N);
 
-    if (N >= 1 && N <= 100000)
-    {
-        for (int i = 1; i <= N; i++)
-        {
-            printf("%d. I Want More Assignments\n", i);
-        }
-        
+    if(N > 0) {
+        start = 1;
+        end = N;
+    }else {
+        start = N;
+        end = 0;
     }
-    
+
+    for (int i = start; i <= end; i++)
+    {
+        printf("%d", i);
+        if (i < end)
+        {
+            printf(" ");
+        }
+                
+    }
 
     return 0;
 }
