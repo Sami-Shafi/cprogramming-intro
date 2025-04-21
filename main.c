@@ -2,7 +2,7 @@
 
 int main() {
     
-    int size;
+    int size, tmp;
     scanf("%d", &size);
 
     int array[size];
@@ -12,18 +12,17 @@ int main() {
         scanf("%d", &array[i]);
     }
 
-    int index;
-    scanf("%d", &index);
-    for (int i = index; i < size-1; i++)
-    {
-        array[i] = array[i+1];
+    for (int i = 0, j = size-1; i < j; i++, j--) {
+        tmp = array[i];
+        array[i] = array[j];
+        array[j] = tmp;
     }
 
-    size-=1;
     for (int i = 0; i < size; i++)
     {
         printf("%d ", array[i]);
     }
+    
 
     return 0;
 }
