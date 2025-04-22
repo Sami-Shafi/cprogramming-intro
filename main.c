@@ -2,27 +2,12 @@
 
 int main() {
     
-    int size, tmp;
-    scanf("%d", &size);
-
-    int array[size];
-
-    for (int i = 0; i < size; i++)
-    {
-        scanf("%d", &array[i]);
-    }
-
-    for (int i = 0, j = size-1; i < j; i++, j--) {
-        tmp = array[i];
-        array[i] = array[j];
-        array[j] = tmp;
-    }
-
-    for (int i = 0; i < size; i++)
-    {
-        printf("%d ", array[i]);
-    }
-    
+    char a[10];
+    scanf("%s", &a);
+    printf("%d\n", a[9]);
+    printf("%s\n", a[9]);
+    printf("%s\n", a);
+    printf("%d", a);
 
     return 0;
 }
