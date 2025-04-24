@@ -2,9 +2,7 @@
 
 int main() {
     
-    char a[10];
-    // scanf("%s", &a);
-    fgets(a, 10, stdin);
+    char a[30] = "SAMIULLAH IN SHAFI";
     printf("%s", a);
 
     return 0;
