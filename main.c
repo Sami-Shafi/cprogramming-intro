@@ -1,20 +1,40 @@
 #include <stdio.h>
-#include <string.h>
 
 int main() {
-    // A program that will serially take all digits from a number and sum them. Like, if you put 23434 it will return sum of 2+3+4+3+4
 
-    char s[1000001];
-    scanf("%s", s);
+    // Given a number N
+    // and an array A
+    // of N
+    // numbers. Determine if it's palindrome or not.
 
-    int sum = 0;
-    for (int i = 0; i < strlen(s); i++)
+    // Note:
+    // An array is called palindrome if it reads the same backward and forward, for example, arrays { 1 } and { 1,2,3,2,1 } are palindromes, while arrays { 1,12 } and { 4,7,5,4 } are not.
+    
+    int size, pal = 1;
+    scanf("%d", &size);
+
+    int array[size];
+
+    for (int i = 0; i < size; i++)
     {
-        // when we get it with s[i] it will return the ASCII value. To get integer we have to subtract 48 from it
-        sum += s[i]-'0';
+        scanf("%d", &array[i]);
     }
 
-    printf("%d", sum);
+    for (int i = 0, j = size-1; i < j; i++, j--) {
+        if (array[i] != array[j])
+        {
+            pal = 0;
+            break;
+        }
+    }
+
+    if (pal == 1)
+    {
+        printf("YES");
+    }else {
+        printf("NO");
+    }
+    
     
     return 0;
 }
