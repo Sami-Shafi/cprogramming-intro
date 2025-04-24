@@ -3,12 +3,13 @@
 
 int main() {
     
-    char a[30] = "SAMIULLAH IN SHAFI";
-    printf("%s", a);
-    int length = strlen(a);
+    char s[1000001];
+    fgets(s, 1000001, stdin);
 
-    printf("\n%d", length);
+    for (int i = 0; s[i] != '\\'; i++)
+    {
+        printf("%c", s[i]);
+    }
     
-
     return 0;
 }
