@@ -1,14 +1,11 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
     
     char a[30] = "SAMIULLAH IN SHAFI";
     printf("%s", a);
-    int length = 0;
-    for (int i = 0; a[i] != '\0'; i++)
-    {
-        length++;
-    }
+    int length = strlen(a);
 
     printf("\n%d", length);
     
