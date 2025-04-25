@@ -1,5 +1,1 @@
-4
-word
-localization
-hello
-sdfdfsdfsdf
+Orange Apple

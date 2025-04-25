@@ -1,4 +1,1 @@
-word
-l10n
-hello
-s9f
+Orange AppleOrange
