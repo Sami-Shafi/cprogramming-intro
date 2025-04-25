@@ -9,7 +9,7 @@ int main() {
     // this thing outputs:
     // -1 -> if first string is smaller
     // 0 -> if both strings are equal
-    // 1 -> if second string is bigger
+    // 1 -> if second string is smaller
     printf("%d", strcmp(a,b));
 
     return 0;
