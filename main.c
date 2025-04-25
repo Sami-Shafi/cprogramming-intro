@@ -1,38 +1,51 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
 
-    // Given a number N
-    // and an array A
-    // of N
-    // numbers. Determine if it's palindrome or not.
+    // Given a string S. Print the origin string if it's not too long otherwise, print the special abbreviation.
 
-    // Note:
-    // An array is called palindrome if it reads the same backward and forward, for example, arrays { 1 } and { 1,2,3,2,1 } are palindromes, while arrays { 1,12 } and { 4,7,5,4 } are not.
+    // Note: The string is called too long, if its length is strictly more than 10 characters. If the string is too long then you have to print the string in the following manner:
+
+    // Print the first character in the string.
+    // Print number of characters between the first and the last characters.
+    // Print the last character in the string.
+    // For example: "localization" will be "l10n", and "internationalization" will be "i18n".
     
-    int size, pal = 1;
+    int size;
     scanf("%d", &size);
 
-    int array[size];
+    char array[size][100];
 
     for (int i = 0; i < size; i++)
     {
-        scanf("%d", &array[i]);
+        scanf("%s", &array[i]);
     }
-
-    for (int i = 0, j = size-1; i < j; i++, j--) {
-        if (array[i] != array[j])
-        {
-            pal = 0;
-            break;
-        }
-    }
-
-    if (pal == 1)
+    
+    // loop in all words
+    for (int i = 0; i < size; i++)
     {
-        printf("YES");
-    }else {
-        printf("NO");
+        if(strlen(array[i]) > 10) {
+            char firstDig = array[i][0];
+            int length = 0;
+            char lastDig;
+
+            // loop inside each word
+            for (int d = 0; d < strlen(array[i]); d++)
+            {
+                if (d > 0 && d < strlen(array[i])-1){
+                    length++;
+                }
+
+                if (strlen(array[i])-d == 1) {
+                    lastDig = array[i][d];
+                }
+            }
+            
+            printf("%c%d%c\n", firstDig, length, lastDig);
+        }else {
+            printf("%s\n", array[i]);
+        }
     }
     
     
