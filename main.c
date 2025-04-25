@@ -6,18 +6,11 @@ int main() {
     char a[101], b[101];
     scanf("%s %s", &a, &b);
 
-    for (int i = 0; i < 101; i++) {
-        if(a[i] == "\0" && b[i] == "\0") {
-            printf("Both Strings are the same!");
-        }else if(a[i] == "\0" || a[i] < b[i]) {
-            printf("A is smaller");
-        }else if (b[i] == "\0" || b[i] < a[i]) {
-            printf("B is smaller");
-        }else if (a[i] == b[i]) {
-            continue;
-        }
-        break;
-    }
+    // this thing outputs:
+    // -1 -> if first string is smaller
+    // 0 -> if both strings are equal
+    // 1 -> if second string is bigger
+    printf("%d", strcmp(a,b));
 
     return 0;
 }
