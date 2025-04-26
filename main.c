@@ -3,34 +3,52 @@
 
 int main() {
 
-    // Suppose there are M1 farmers who can complete a work in D days. Fortunately, some other farmers appeard in the village before the start of the work, and now there are M2 additional farmers. Can you determine how many fewer days it will take for them to complete the task?
-
-    // Note: If the answer is a floating value, take the integer part of the answer.
+    // You will be given a string S as input. The string will contain only English small alphabets and will not contain any spaces. You need to tell how many time each alphabets from a to z appears. But if the count is zero, you don't need to prin that.
 
     // Input Format
-    // First line will contain T, the number of test cases.
-    // For each test case, input will contain three positive integers M1, M2 and D.
 
+    // Input will contain only S.
+    // Constraints
 
-    // Our Code Planning
-    // Steps Plan:: initial number (10), additional number (5), initial days (15)
-    // 10 joner lage 15 din, 1 joner lage 10*15 din, 10+5 joner lage (10*15)/(10+5) -> new days ?
-    // new days - initial days = ans
+    // 1 <= |S| <= 10000; Here |S| means the length of S.
+    // Output Format
 
-    // first take t, for t times run a loop -> inside each loop -> run a scan loop & work with the ans
+    // Ouput in the format show in the sample output.
+    // Sample Input 0
 
-    int times;
-    scanf("%d", &times);
+    // thefoxisbrave
+    // Sample Output 0
 
-    for (int iteration = 1; iteration <= times; iteration++)
+    // a - 1
+    // b - 1
+    // e - 2
+    // f - 1
+    // h - 1
+    // i - 1
+    // o - 1
+    // r - 1
+    // s - 1
+    // t - 1
+    // v - 1
+    // x - 1
+
+    char text[10001];
+    scanf("%s", &text);
+
+    int alphabetArr[125] = {0};
+    for (int i = 0; i < strlen(text); i++)
     {
-        int prevF, addF, initD;
-        scanf("%d %d %d", &prevF, &addF, &initD);
+        int alphI = text[i];
+        alphabetArr[alphI]++;
+    }
 
-        int totalF = prevF + addF;
-        int initIndividualD = prevF * initD;
-        int newD = initIndividualD / totalF;
-        printf("%d\n", initD-newD);
+    for (int i = 97; i <= 122; i++)
+    {
+        if(alphabetArr[i] == 0) {
+            continue;
+        }
+
+        printf("%c - %d\n", i, alphabetArr[i]);
     }
 
     return 0;
