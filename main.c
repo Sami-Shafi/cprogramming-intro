@@ -1,26 +1,25 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
 
-    // You will be given an integer array A of size N. You need to count the number of elements that are divided by 2 and number of elements that are divided by 3. If any number is divided by both 2 and 3, then consider it only for 2.
+    // You will be given a string S as input contains only small English alphabets. You need to tell the number of consonants in it. The string will not contain any spaces.
 
-    int size;
-    scanf("%d", &size);
+    // Note: Vowels are a,e,i,o and u. The rest are called consonants.
 
-    int a[size], first = 0, second = 0;
-    for (int i = 0; i < size; i++)
+    char s[100001];
+    scanf("%s", s);
+
+    int count = 0;
+    for (int i = 0; i < strlen(s); i++)
     {
-        scanf("%d", &a[i]);
-        if(a[i] % 2 == 0 && a[i] % 3 == 0) {
-            first++;
-        }else if (a[i] % 3 == 0) {
-            second++;
-        }else if (a[i] % 2 == 0) {
-            first++;
+        if (s[i] == 'a' || s[i] == 'e' || s[i] == 'i' || s[i] == 'o' || s[i] == 'u') {
+            continue;
         }
+        count++;
     }
 
-    printf("%d %d", first, second);
+    printf("%d", count);
 
     return 0;
 }
