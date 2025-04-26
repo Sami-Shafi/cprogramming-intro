@@ -2,28 +2,25 @@
 
 int main() {
 
-    int arraySize, highestValue;
-    scanf("%d %d", &arraySize, &highestValue);
+    // You will be given an integer array A of size N. You need to count the number of elements that are divided by 2 and number of elements that are divided by 3. If any number is divided by both 2 and 3, then consider it only for 2.
 
-    int ourArray[arraySize], iterationsArray[100001] = {0};
-    
-    for (int i = 0; i < arraySize; i++)
+    int size;
+    scanf("%d", &size);
+
+    int a[size], first = 0, second = 0;
+    for (int i = 0; i < size; i++)
     {
-        int insertedVal;
-        scanf("%d", &insertedVal);
-        ourArray[i] = insertedVal;
-    }
-    
-    for (int i = 0; i < arraySize; i++)
-    {
-        int count = ourArray[i];
-        iterationsArray[count-1]++;
+        scanf("%d", &a[i]);
+        if(a[i] % 2 == 0 && a[i] % 3 == 0) {
+            first++;
+        }else if (a[i] % 3 == 0) {
+            second++;
+        }else if (a[i] % 2 == 0) {
+            first++;
+        }
     }
 
-    for (int i = 0; i < highestValue; i++)
-    {
-        printf("%d\n", iterationsArray[i]);
-    }
+    printf("%d %d", first, second);
 
     return 0;
 }
