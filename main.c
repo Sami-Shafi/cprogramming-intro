@@ -3,23 +3,25 @@
 
 int main() {
 
-    int n, star=1;
-    scanf("%d", &n);
-
-    for (int i = 1; i <= n; i++)
+    int size, sum;
+    scanf("%d", &size);
+    int arr[size];
+    
+    for (int i = 0; i < size; i++)
     {
-        int space = n-i;
-        while (space > 0) {
-            printf(" ");
-            space--;
-        }
+        scanf("%d", &arr[i]);
+    }
+    scanf("%d", &sum);
+    
 
-        for (int j = 1; j <= star; j++)
+    for (int i = 0; i < size-1; i++)
+    {
+        for (int j = i+1; j < size; j++)
         {
-            printf("*");
+            if(arr[i]+arr[j]==sum) {
+                printf("%d %d\n", arr[i], arr[j]);
+            }
         }
-        printf("\n");
-        star+=2;
     }
     
     
