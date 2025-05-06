@@ -3,53 +3,37 @@
 
 int main() {
 
-    // You will be given a string S as input. The string will contain only English small alphabets and will not contain any spaces. You need to tell how many time each alphabets from a to z appears. But if the count is zero, you don't need to prin that.
+    char word1[101], word2[101];
+    scanf("%s %s", &word1, &word2);
 
-    // Input Format
+    if(strlen(word1) == strlen(word2)) {
+        for (int i = 0; i < strlen(word1); i++)
+        {
+            int j=0;
+            int match;
+            while (j < strlen(word2))
+            {
+                
+                match = 0;
+                if(word1[i] == word2[j]) {
+                    match++;
+                    word2[j] = "0";
+                    break;
+                }
 
-    // Input will contain only S.
-    // Constraints
+                j++;
+            }
 
-    // 1 <= |S| <= 10000; Here |S| means the length of S.
-    // Output Format
+            if (match == 0)
+            {
+                printf("No");
+                break;
+            }else if (strlen(word1)-i == 1) {
+                printf("Yes");
+            }
 
-    // Ouput in the format show in the sample output.
-    // Sample Input 0
-
-    // thefoxisbrave
-    // Sample Output 0
-
-    // a - 1
-    // b - 1
-    // e - 2
-    // f - 1
-    // h - 1
-    // i - 1
-    // o - 1
-    // r - 1
-    // s - 1
-    // t - 1
-    // v - 1
-    // x - 1
-
-    char text[10001];
-    scanf("%s", &text);
-
-    int alphabetArr[125] = {0};
-    for (int i = 0; i < strlen(text); i++)
-    {
-        int alphI = text[i];
-        alphabetArr[alphI]++;
-    }
-
-    for (int i = 97; i <= 122; i++)
-    {
-        if(alphabetArr[i] == 0) {
-            continue;
         }
-
-        printf("%c - %d\n", i, alphabetArr[i]);
     }
-
+    
     return 0;
 }
