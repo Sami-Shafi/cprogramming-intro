@@ -3,17 +3,23 @@
 
 int main() {
 
-    int n;
+    int n, star=1;
     scanf("%d", &n);
 
-    for (int i = n; i >= 1; i--)
+    for (int i = 1; i <= n; i++)
     {
-        for (int j = 1; j <= i; j++)
+        int space = n-i;
+        while (space > 0) {
+            printf(" ");
+            space--;
+        }
+
+        for (int j = 1; j <= star; j++)
         {
             printf("*");
         }
         printf("\n");
-        
+        star+=2;
     }
     
     
