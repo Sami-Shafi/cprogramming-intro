@@ -3,37 +3,19 @@
 
 int main() {
 
-    char word1[101], word2[101];
-    scanf("%s %s", &word1, &word2);
+    int n;
+    scanf("%d", &n);
 
-    if(strlen(word1) == strlen(word2)) {
-        for (int i = 0; i < strlen(word1); i++)
+    for (int i = 1; i <= n; i++)
+    {
+        for (int j = 1; j <= i; j++)
         {
-            int j=0;
-            int match;
-            while (j < strlen(word2))
-            {
-                
-                match = 0;
-                if(word1[i] == word2[j]) {
-                    match++;
-                    word2[j] = "0";
-                    break;
-                }
-
-                j++;
-            }
-
-            if (match == 0)
-            {
-                printf("No");
-                break;
-            }else if (strlen(word1)-i == 1) {
-                printf("Yes");
-            }
-
+            printf("*");
         }
+        printf("\n");
+        
     }
+    
     
     return 0;
 }
