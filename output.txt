@@ -1,1 +1,2 @@
-Total: 85
+MAIN: 10
+SUM: 20
