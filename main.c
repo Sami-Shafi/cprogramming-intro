@@ -1,17 +1,21 @@
 #include <stdio.h>
 #include <string.h>
 
-int sum2Inputs() {
-    int num1,num2;
-    scanf("%d %d", &num1, &num2);
-    int ans = num1 + num2;
-    return ans;
+void printSumInputs(size) {
+    int nums[size], sum = 0;
+    for (int i = 0; i < size; i++)
+    {
+        scanf("%d", &nums[i]);
+        sum += nums[i];
+    }
+    printf("Total: %d", sum);
 }
 
 int main() {
 
-    int val = sum2Inputs();
-    printf("%d", val);
+    int times;
+    scanf("%d", &times);
+    printSumInputs(times);
     
     return 0;
 }
