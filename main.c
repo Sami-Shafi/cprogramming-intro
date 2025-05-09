@@ -3,15 +3,14 @@
 int main() {
     
     int x = 10;
-    printf("%p\n", &x);
+    // printf("%p\n", &x);
 
     int* pointer;
     pointer = &x;
 
-    // location of where x is stored
-    printf("%p\n", pointer);
-    // location of where pointer variable is stored
-    printf("%p", &pointer);
+    *pointer = 20;
+
+    printf("%d", x);
     
     return 0;
 }
