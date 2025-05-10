@@ -1,16 +1,29 @@
 #include <stdio.h>
+#include <string.h>
 
 int main() {
-    
-    int x = 10;
-    // printf("%p\n", &x);
 
-    int* pointer;
-    pointer = &x;
+    int n, space;
+    scanf("%d", &n);
 
-    *pointer = 20;
 
-    printf("%d", x);
+    for (int i = 1; i <= n; i++)
+    {
+        space = n-i;
+        while (space > 0)
+        {
+            printf(" ");
+            space--;
+        }
+        
+
+        for (int j = i; j >= 1; j--)
+        {
+            printf("%d", j);
+        }
+
+        printf("\n");
+    }
     
     return 0;
 }
