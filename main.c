@@ -2,44 +2,98 @@
 #include <string.h>
 #include <stdbool.h>
 
-// You will be given a 2D matrix of N * M size. The matrix will contain integer values only. You need to print the values of last row and then print the values of last column in the order they were given.
 
-// Input Format
-// First line will contain N and M the row and column respectively.
-// Then the 2D matrix will be given.
+// Christmas Tree Generator
+// Sample Input 0
+// 1
 
-// Constraints
-// 2 <= N,M <= 100
-// 0 <= Element <= 100
+// Sample Output 0
+//      *
+//     ***
+//    *****
+//   *******
+//  *********
+// ***********
+//      *
+//      *
+//      *
+//      *
+//      *
 
-// Output Format
-// First line will contain the values of last row.
-// Second line will contain the values of last column.
+// Sample Input 1
+// 3
+
+// Sample Output 1
+//       *
+//      ***
+//     *****
+//    *******
+//   *********
+//  ***********
+// *************
+//      ***
+//      ***
+//      ***
+//      ***
+//      ***
+
+// Sample Input 2
+// 5
+
+// Sample Output 2
+//        *
+//       ***
+//      *****
+//     *******
+//    *********
+//   ***********
+//  *************
+// ***************
+//      *****
+//      *****
+//      *****
+//      *****
+//      *****
+
+void makeBranch(int stars, int spaces,int max) {
+    if (stars > max) {
+        return;
+    }
+    for (int i = 1; i <= spaces; i++) {
+        printf(" ");
+    } 
+    for (int i = 1; i <= stars; i++)
+    {
+        printf("*");
+    }
+    printf("\n");
+    makeBranch(stars+2, spaces-1, max);
+}
+
+void makeBody(int n) {
+    for (int i = 0; i < 5; i++)
+    {
+        for (int i = 1; i <= 5; i++) {
+        printf(" ");
+        } 
+        for (int i = 1; i <= n; i++)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+    
+}
 
 int main() {
 
-    int n, m;
-    scanf("%d %d", &n, &m);
+    int n;
+    scanf("%d", &n);
 
-    int mat[n][m];
-    
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            scanf("%d", &mat[i][j]);
-        }
-    }
-        
-
-    for (int i = 0; i < m; i++)
-    {
-        printf("%d ", mat[n-1][i]);
-    }
-    printf("\n");
-    for (int i = 0; i < n; i++)
-    {
-        printf("%d ", mat[i][m-1]);
+    if(n % 2 != 0 && n > 0 && n < 22) {
+        int highest = n+10;
+        makeBranch(1, (highest-1)/2, highest);
+        makeBody(n);
     }
 
     return 0;
