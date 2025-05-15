@@ -1,26 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 
-void vowelCounter(char text[], int length, int index, int *count) {
-    if (index == length) {
-        printf("%d", *count);
-        return;
+int factorial(int n) {
+    if (n == 1) {
+        return 1;
     }
-    char ch = text[index];
-    if (ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || ch == 'o' || ch == 'O' || ch == 'u' || ch == 'U') {
-        *count = *count + 1;
-    }
-    
-    vowelCounter(text, length, index+1, count);
+
+    return n * factorial(n-1);
 }
 
 int main() {
 
-    char text[201];
-    int vcount = 0;
-    fgets(text, 200, stdin);
+    int n, sum = 0;
+    scanf("%d", &n);
 
-    vowelCounter(text, strlen(text), 0, &vcount);
+    printf("%d", factorial(5));
 
     return 0;
 }
