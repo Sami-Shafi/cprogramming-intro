@@ -31,23 +31,24 @@ int main() {
 
     int n, m;
     scanf("%d %d", &n, &m);
+    bool is_jadu = true;
+
+    if (n!=m) {
+        is_jadu = false;   
+    }
+
     int mat[n][m];
 
-    if (n==m) {
+
+    if (n >= 1 && n <= 100 && m >= 1 && m <= 100) {
         for (int i = 0; i < n; i++)
         {
             for (int j = 0; j < m; j++)
             {
-                scanf("%d ", &mat[i][j]);
+                scanf("%d", &mat[i][j]);
             }
         }
         
-    }
-
-    bool is_jadu = true;
-
-    if (n!=m) {
-        is_jadu = false;
     }
 
     for (int i = 0; i < n; i++)
@@ -58,24 +59,27 @@ int main() {
 
         for (int j = 0; j < m; j++)
         {
+            if(mat[i][j] < 0) {
+                return 1;
+            }
+
             if (i == j || i+j == n-1) {
                 if(mat[i][j] != 1) {
                     is_jadu = false;
-                    printf("NO");
                     break;
                 }
             } else if (mat[i][j] != 0) {
                 is_jadu = false;
-                printf("NO");
                 break;
             }
-
         }
     }
 
     if (is_jadu)
     {
         printf("YES");
+    }else {
+        printf("NO");
     }
     
 
