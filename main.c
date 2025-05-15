@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-int factorial(int n) {
+long long int factorial(int n) {
     if (n == 1) {
         return 1;
     }
@@ -11,10 +11,10 @@ int factorial(int n) {
 
 int main() {
 
-    int n, sum = 0;
+    int n;
     scanf("%d", &n);
 
-    printf("%d", factorial(5));
+    printf("%lld", factorial(n));
 
     return 0;
 }
