@@ -1,31 +1,26 @@
 #include <stdio.h>
 #include <string.h>
 
-void seperate(char str[], int index) {
-    if(index == strlen(str)) {
+void vowelCounter(char text[], int length, int index, int *count) {
+    if (index == length) {
+        printf("%d", *count);
         return;
     }
-    printf("%c ", str[index]);
-    seperate(str, index+1);
-}
-
-void keepWorking(int n) {
-    if(n <= 0) {
-        return;
+    char ch = text[index];
+    if (ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || ch == 'o' || ch == 'O' || ch == 'u' || ch == 'U') {
+        *count = *count + 1;
     }
-    char str[100001];
-    scanf("%s", &str);
-    seperate(str, 0);
-    printf("\n");
-    keepWorking(n-1);
+    
+    vowelCounter(text, length, index+1, count);
 }
 
 int main() {
 
-    int n;
-    scanf("%d", &n);
+    char text[201];
+    int vcount = 0;
+    fgets(text, 200, stdin);
 
-    keepWorking(n);
+    vowelCounter(text, strlen(text), 0, &vcount);
 
     return 0;
 }
