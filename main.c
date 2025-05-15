@@ -1,35 +1,83 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdbool.h>
 
-void executeMath(int n) {
-    if (n <= 0) {
-        return;
-    }
+// You will be given a matrix of size N * M. You need to tell if it is Jadu Matrix or not.
+// Note: A Jadu Matrix is a square matrix, where the values of primary diagonal and secondary diagonal are 1. Rest of the cell will contain only 0.
 
-    long long int total;
-    int a,b,c;
-    scanf("%lld %d %d %d", &total, &a, &b, &c);
-    long long int mul = a*b*c;
-    long long int potentialAns = total / mul;
-    
-    if (mul == 0) {
-        printf("-1\n");
-    } else if (total % mul == 0) {
-        printf("%lld\n", potentialAns);
-    } else {
-        printf("-1\n");
-    }
+// Input Format
+// First line will contain N, the row and M, the column of the matrix.
+// Then the N * M sized matrix will be given.
 
-    executeMath(n-1);
-}
+// Constraints
+// 1 <= N, M <= 100
+// 0 <= Values <= 100
 
+// Output Format
+// Ouput "YES" if the matrix is Jadu Matrix, otherwise output "NO" without the quotation marks.
+
+// Sample Input 0
+// 5 5
+// 1 0 0 0 1
+// 0 1 0 1 0
+// 0 0 1 0 0
+// 0 1 0 1 0
+// 1 0 0 0 1
+
+// Sample Output 0
+// YES
 
 int main() {
 
-    int n;
-    scanf("%d", &n);
+    int n, m;
+    scanf("%d %d", &n, &m);
+    int mat[n][m];
 
-    executeMath(n);
+    if (n==m) {
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = 0; j < m; j++)
+            {
+                scanf("%d ", &mat[i][j]);
+            }
+        }
+        
+    }
+
+    bool is_jadu = true;
+
+    if (n!=m) {
+        is_jadu = false;
+    }
+
+    for (int i = 0; i < n; i++)
+    {
+        if(is_jadu != true) {
+            break;
+        }
+
+        for (int j = 0; j < m; j++)
+        {
+            if (i == j || i+j == n-1) {
+                if(mat[i][j] != 1) {
+                    is_jadu = false;
+                    printf("NO");
+                    break;
+                }
+            } else if (mat[i][j] != 0) {
+                is_jadu = false;
+                printf("NO");
+                break;
+            }
+
+        }
+    }
+
+    if (is_jadu)
+    {
+        printf("YES");
+    }
+    
 
     return 0;
 }
